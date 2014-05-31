@@ -1,4 +1,2 @@
-This is your new Play application
-=====================================
+Exemplo de aplicacao usado para mostrar como funciona o play framework em SI1@UFCG. Versão alternativa da usada na sala de aula. Essa usa um pouco de bootstrap. 
 
-This file will be packaged with your application, when using `play dist`.
