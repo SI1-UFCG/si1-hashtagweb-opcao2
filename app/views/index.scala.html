@@ -1,0 +1,30 @@
+@(message: String)(jogoAtual : Hashtag)
+
+@main("Welcome to Play") {
+
+	<h3>O jogo atual</h3>
+	<em>@message</em><br/>
+
+	@for(y <- 0 to 2){
+		@for(x <- 0 to 2){
+			@if(jogoAtual.casaDesocupada(x,y)){
+				 |
+			}else{
+				@jogoAtual.getDono(x , y) |
+			} 
+		}
+		<br/>
+	}	
+    
+    <h3>Próxima jogada</h3>
+    Vez de: @jogoAtual.getJogadorNaVez() <br/> 
+    <form action = "@routes.Application.joga()" method = "post">
+   		<input type= "text" name="x" />
+   		<input type= "text" name="y" />
+       	<button type="submit" name="jogar" class = "btn primary">jogar</button>
+   	</form>
+
+	<form action = "@routes.Application.novoJogo()" method = "post">
+       	<button type="submit" class = "btn warning">Novo jogo</button> 
+   	</form>
+}
